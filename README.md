@@ -1,9 +1,11 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+**The first bit of code displays the webview being instantiated. "myWebView = (WebView) findViewById(R.id.my_webview);" links the myWebView variable with the graphical WebView element in activity_main.xml
+    "WebViewClient myWebClient = new WebViewClient();" and "myWebView.setWebViewClient(myWebClient);" creates a WebViewClient and attaches it to the WebView, with " myWebView.getSettings().setJavaScriptEnabled(true);"
+    enabling javascript execution. When called, "myWebView.loadUrl("https://www.google.com/");" and "myWebView.loadUrl("https://www.his.se/");" will change the url that is shown in the webview. The first picture,
+    external.png, shows how the external web page looks and the second, internal.png, shows how the internal web page.**
 
-_Du kan ta bort all text som finns sedan tidigare_.
 
 ## Följande grundsyn gäller dugga-svar:
 
@@ -16,24 +18,33 @@ _Du kan ta bort all text som finns sedan tidigare_.
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
-```
+ private WebView myWebView;
 
+    public void showExternalWebPage(){
+        myWebView.loadUrl("https://www.google.com/");
+    }
+
+    public void showInternalWebPage(){
+        myWebView.loadUrl("https://www.his.se/");
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        myWebView = (WebView) findViewById(R.id.my_webview);
+        WebViewClient myWebClient = new WebViewClient();
+        myWebView.setWebViewClient(myWebClient);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+    }
+```
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](external.png)
+![](internal.png)
 
 Läs gärna:
 
