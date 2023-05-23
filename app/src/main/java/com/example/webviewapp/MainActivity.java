@@ -18,9 +18,7 @@ public class MainActivity extends AppCompatActivity {
         myWebView.loadUrl("https://www.google.com/");
     }
 
-    public void showInternalWebPage(){
-        myWebView.loadUrl("https://www.his.se/");
-    }
+    public void showInternalWebPage(){myWebView.loadUrl("file:///assets/example.html");}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

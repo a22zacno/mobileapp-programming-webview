@@ -3,7 +3,7 @@
 
 **The first bit of code displays the webview being instantiated. "myWebView = (WebView) findViewById(R.id.my_webview);" links the myWebView variable with the graphical WebView element in activity_main.xml
     "WebViewClient myWebClient = new WebViewClient();" and "myWebView.setWebViewClient(myWebClient);" creates a WebViewClient and attaches it to the WebView, with " myWebView.getSettings().setJavaScriptEnabled(true);"
-    enabling javascript execution. When called, "myWebView.loadUrl("https://www.google.com/");" and "myWebView.loadUrl("https://www.his.se/");" will change the url that is shown in the webview. The first picture,
+    enabling javascript execution. When called, "myWebView.loadUrl("https://www.google.com/");" and "myWebView.loadUrl("file:///assets/example.html");" will change the url that is shown in the webview. The first picture,
     external.png, shows how the external web page looks and the second, internal.png, shows how the internal web page.**
 
 
@@ -25,7 +25,7 @@ Programkod ska se ut som exemplet nedan. Koden m√•ste vara korrekt indenterad d√
     }
 
     public void showInternalWebPage(){
-        myWebView.loadUrl("https://www.his.se/");
+        myWebView.loadUrl("file:///assets/example.html");}
     }
 
     @Override
